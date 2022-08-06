@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Montserrat:wght@600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    color: #24305f;
+}
+
+body {
+    background: #fffdfb;
+}
+
+.accordion {
+    width: 50%;
+    margin: 200px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.item {
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 30px;
+    align-items: center;
+    padding: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+h2{
+    font-size: 24px;
+    text-transform: capitalize;
+}
+
+.number {
+    font-size: 32px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    color: #1864ab
+}
+
+.hidden-box {
+    grid-column: 2/3;
+    display: none;
+}
+
+.hidden-box p {
+    line-height: 1.2;
+    margin-bottom: 24px;
+    font-size: 20px;
+    letter-spacing: 0.3px;
+    word-spacing: 1px;
+}
+
+.hidden-box ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.hidden-box ul li {
+    margin-left: 16px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    font-size: 20px;
+    letter-spacing: 0.3px;
+    word-spacing: 1px;
+}
+
+.active {
+    position: relative;
+}
+
+.active::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-top: 3px solid #1864ab;
+    animation: borderline 1s linear forwards;
+}
+
+@keyframes borderline {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.active .hidden-box {
+    display: block;
+}
